@@ -1,0 +1,19 @@
+body{
+    background-color: darkslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+.calculator-container{
+    height: fit-content;
+    width: 30%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 2%;
+    align-items: center;
+    border-radius: 2rem;
+}
