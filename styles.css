@@ -27,6 +27,7 @@ body{
 }
 
 .top{
+    overflow: auto;
     background-color: rgb(39, 25, 24);
     color: beige;
     padding: 1rem;
