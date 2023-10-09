@@ -47,9 +47,31 @@ function checkBrackets(val){
 }
 
 
+const calc_history = [];
+const calc_results = [];
+const history_container = document.querySelector('.history');
+console.log(history_container);
+
+function historyUpdater(calc_history, calc_results){
+    const his_div = document.createElement('div');
+    const res_div = document.createElement('div');
+    his_div.classList.add('his');
+    res_div.classList.add('results');
+    his_div.textContent=calc_history;
+    res_div.textContent=calc_results;
+    history_container.insertBefore(res_div, history_container.firstChild);
+    history_container.insertBefore(his_div, history_container.firstChild);
+    
+}
+
+
+
+
+
 let first_val = 0;
 let second_val = 0;
 let counting_val = 0;
+
 
 const calc_symbols = ['+', '-', 'x', '÷'];
 let current_operator = '';
@@ -119,6 +141,8 @@ functionals.forEach( (functional) => {
         switch (e.target.id){
             case 'equal':
                 current_value = calcEvaluator(value.textContent);
+                historyUpdater(value.textContent, current_value);
+                console.log(calc_history,calc_results);
                 if(current_value == "ERROR" || current_value == "0"){
                     value.textContent = current_value;
                     current_value = '';
@@ -136,6 +160,7 @@ functionals.forEach( (functional) => {
                 current_value = '';
                 value.textContent = 0;
                 brackets = false;
+                historyUpdater("Cleared", "0");
             break;
 
             case 'delete':

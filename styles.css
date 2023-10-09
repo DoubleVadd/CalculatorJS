@@ -22,6 +22,31 @@ body{
     box-shadow: 0px 5px 0px 3px burlywood, 0px 10px 0px 5px rgb(119, 96, 67), inset 0px 1px 0px 10px rgb(224, 190, 147);
 }
 
+.history-container{
+    color: white;
+    position: absolute;
+    margin-left: 90%;
+    margin-right: 10%;
+    margin-top: 2%;
+    align-self: flex-start;
+    text-align: right;
+    font-weight: lighter;
+    font-size: large;
+    max-height: 60%;
+    overflow: hidden;
+    
+}
+
+.history-container::after{
+    content: "";
+    position: absolute; top:0; bottom: 0; left: -15px; right: -15px;
+    box-shadow: inset 0px -30px 40px darkslategrey;
+}
+
+.results{
+    border-bottom: 0.1rem solid beige;
+}
+
 .top, .bottom{
     width: 85%;
 }
